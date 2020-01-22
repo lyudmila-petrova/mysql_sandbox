@@ -1,0 +1,6 @@
+.idea
+.env
+
+docker/db/data/*
+docker/db/dump/*
+!docker/db/dump/.gitkeep

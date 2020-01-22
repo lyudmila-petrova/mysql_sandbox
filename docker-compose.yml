@@ -1,0 +1,20 @@
+version: '3.4'
+services:
+  db:
+    image: mariadb
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
+    volumes:
+      - ./docker/db/data:/var/lib/mysql
+      - ./docker/db/dump:/dump:delegated
+    environment:
+      - "MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}"
+      - "MYSQL_USER=${MYSQL_USER}"
+      - "MYSQL_PASSWORD=${MYSQL_PASSWORD}"
+      - "MYSQL_DATABASE=${MYSQL_DATABASE}"
+    networks:
+      - upgrade
+    restart: always
+
+networks:
+  upgrade:
+    driver: bridge
