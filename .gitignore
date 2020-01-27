@@ -4,3 +4,12 @@
 docker/db/data/*
 docker/db/dump/*
 !docker/db/dump/.gitkeep
+
+venv
+.ipynb_checkpoints
+
+data/external/*
+!data/external/.gitkeep
+
+data/processed/*
+!data/processed/.gitkeep
